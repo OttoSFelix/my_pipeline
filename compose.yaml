@@ -1,4 +1,10 @@
 services:
+  express:
+    image: ottosfelix/express_app:latest
+    ports:
+      - 8080:8080
+    container_name: express_app
+    
   watchtower:
     image: nickfedor/watchtower
     environment:
