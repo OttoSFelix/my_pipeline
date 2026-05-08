@@ -10,7 +10,8 @@ services:
     environment:
       -  WATCHTOWER_POLL_INTERVAL=60 <em># Poll every 60 seconds</em>
       - DOCKER_API_VERSION=1.40
+      - REPO_USER=${DOCKER_USER}
+      - REPO_PASS=${DOCKER_PASS}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ~/.docker/config.json:/config.json:ro
     container_name: watchtower
